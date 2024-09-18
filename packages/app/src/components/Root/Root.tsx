@@ -155,6 +155,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         {/* End global nav */}
         <SidebarDivider />
         <SidebarScrollWrapper>
+          <SidebarItem icon={RuleIcon} to="headlamp" text="Headlamp" />
           <SidebarItem icon={MapIcon} to="tech-radar" text="Tech Radar" />
           <SidebarItem icon={RuleIcon} to="lighthouse" text="Lighthouse" />
           <SidebarItem
