@@ -13,35 +13,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React from 'react';
-import { Typography, Grid } from '@material-ui/core';
-import {
-  InfoCard,
-  Header,
-  Page,
-  Content,
-  ContentHeader,
-  HeaderLabel,
-  SupportButton,
-} from '@backstage/core-components';
-import { useApi, configApiRef } from '@backstage/core-plugin-api';
-import { kubernetesApiRef } from '@backstage/plugin-kubernetes';
+import React, { useState, useEffect } from 'react';
+import { Progress } from '@backstage/core-components';
 
 export function HeadlampComponent() {
-  // const config = useApi(configApiRef);
-  // const kubernetesApi = useApi(kubernetesApiRef);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const refreshInterval = 5000;
+  const headlampUrl = 'http://localhost:4466';
 
-  // const clusters = kubernetesApi.getClusters()
-  // eslint-disable-next-line no-console
-  // console.log("Clusters:", clusters);
-  // const headlampUrl = config.getString('headlamp.serverUrl')
-  // eslint-disable-next-line no-console
-  // console.log("Headlamp URL:", headlampUrl);
+  useEffect(() => {
+    const checkHeadlampReady = async () => {
+      try {
+        const response = await fetch(`${headlampUrl}/config`);
+        if (response.ok) {
+          setIsLoaded(true);
+        } else {
+          throw new Error(`Headlamp not ready: ${response.statusText}`);
+        }
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.error('Failed to check Headlamp readiness:', err);
+      }
+    };
+
+    if (!isLoaded) {
+      checkHeadlampReady();
+      const timer = setInterval(checkHeadlampReady, refreshInterval);
+      return () => clearInterval(timer);
+    }
+    return undefined;
+  }, [isLoaded, headlampUrl]);
+
+  if (!isLoaded) {
+    return <Progress />;
+  }
 
   return (
     <iframe
-      // src={`${headlampUrl}`}
-      src="http://localhost:4466/"
+      src={headlampUrl}
       title="Headlamp"
       style={{
         width: '100%',

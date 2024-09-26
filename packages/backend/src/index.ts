@@ -56,5 +56,5 @@ backend.add(import('@backstage/plugin-techdocs-backend/alpha'));
 backend.add(import('@backstage/plugin-signals-backend'));
 backend.add(import('@backstage/plugin-notifications-backend'));
 
-backend.add(import('@backstage/plugin-headlamp-backend'));
+backend.add(import('@yolossn/plugin-headlamp-backend'));
 backend.start();

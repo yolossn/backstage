@@ -6232,56 +6232,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@backstage/plugin-headlamp-backend@^0.0.0, @backstage/plugin-headlamp-backend@workspace:plugins/headlamp-backend":
-  version: 0.0.0-use.local
-  resolution: "@backstage/plugin-headlamp-backend@workspace:plugins/headlamp-backend"
-  dependencies:
-    "@backstage/backend-common": "workspace:^"
-    "@backstage/backend-defaults": "workspace:^"
-    "@backstage/backend-plugin-api": "workspace:^"
-    "@backstage/backend-test-utils": "workspace:^"
-    "@backstage/cli": "workspace:^"
-    "@backstage/plugin-auth-backend": "workspace:^"
-    "@backstage/plugin-auth-backend-module-guest-provider": "workspace:^"
-    "@types/express": "*"
-    "@types/supertest": ^2.0.8
-    express: ^4.17.1
-    express-promise-router: ^4.1.0
-    http-proxy-middleware: ^2.0.0
-    js-yaml: ^4.1.0
-    msw: ^2.0.8
-    node-fetch: ^2.6.7
-    supertest: ^6.2.4
-  languageName: unknown
-  linkType: soft
-
-"@backstage/plugin-headlamp-frontend@^0.0.0, @backstage/plugin-headlamp-frontend@workspace:plugins/headlamp-frontend":
-  version: 0.0.0-use.local
-  resolution: "@backstage/plugin-headlamp-frontend@workspace:plugins/headlamp-frontend"
-  dependencies:
-    "@backstage/cli": "workspace:^"
-    "@backstage/core-app-api": "workspace:^"
-    "@backstage/core-components": "workspace:^"
-    "@backstage/core-plugin-api": "workspace:^"
-    "@backstage/dev-utils": "workspace:^"
-    "@backstage/plugin-kubernetes": "workspace:^"
-    "@backstage/plugin-kubernetes-common": "workspace:^"
-    "@backstage/test-utils": "workspace:^"
-    "@backstage/theme": "workspace:^"
-    "@material-ui/core": ^4.9.13
-    "@material-ui/icons": ^4.9.1
-    "@material-ui/lab": ^4.0.0-alpha.61
-    "@testing-library/jest-dom": ^6.0.0
-    "@testing-library/react": ^14.0.0
-    "@testing-library/user-event": ^14.0.0
-    msw: ^1.0.0
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-    react-use: ^17.2.4
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0 || ^18.0.0
-  languageName: unknown
-  linkType: soft
-
 "@backstage/plugin-home-react@workspace:^, @backstage/plugin-home-react@workspace:plugins/home-react":
   version: 0.0.0-use.local
   resolution: "@backstage/plugin-home-react@workspace:plugins/home-react"
@@ -9595,12 +9545,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/container@npm:^5.0.0":
-  version: 5.15.0
-  resolution: "@google-cloud/container@npm:5.15.0"
+"@google-cloud/container@npm:^5.0.0, @google-cloud/container@npm:^5.17.0":
+  version: 5.17.0
+  resolution: "@google-cloud/container@npm:5.17.0"
   dependencies:
     google-gax: ^4.0.3
-  checksum: e31332b17816688f0cf831c66ef1ccc24c7600e4ec798fdeed33b66ed934372b1a962e92c665903bae661db5aaf872d79becc7d67b3f9c6a55b403acdfd534ec
+  checksum: 8e583f9cd1f12cf860dd9d483f4e0e8c1e4edf7191d0152c8b821c2debbe80b77eb663b45fa3526faf1d3182e5000df532628360bbae53420e090b92043c3880
   languageName: node
   linkType: hard
 
@@ -20603,6 +20553,102 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@yolossn/plugin-headlamp-backend@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@yolossn/plugin-headlamp-backend@npm:0.0.0"
+  dependencies:
+    "@backstage/backend-common": "workspace:^"
+    "@backstage/backend-defaults": "workspace:^"
+    "@backstage/backend-plugin-api": "workspace:^"
+    express: ^4.17.1
+    express-promise-router: ^4.1.0
+    http-proxy-middleware: ^2.0.0
+    js-yaml: ^4.1.0
+    node-fetch: ^2.6.7
+  checksum: f4f2156ed84d63daaec506712887c346071527285897e1d1c85e980212b8028ea134b5885dc2c91cb6737a963565da4c267c1be1bdef30f1630eb1a6b2c3b605
+  languageName: node
+  linkType: hard
+
+"@yolossn/plugin-headlamp-backend@workspace:plugins/headlamp-backend":
+  version: 0.0.0-use.local
+  resolution: "@yolossn/plugin-headlamp-backend@workspace:plugins/headlamp-backend"
+  dependencies:
+    "@backstage/backend-common": "workspace:^"
+    "@backstage/backend-defaults": "workspace:^"
+    "@backstage/backend-plugin-api": "workspace:^"
+    "@backstage/backend-test-utils": "workspace:^"
+    "@backstage/catalog-client": "workspace:^"
+    "@backstage/cli": "workspace:^"
+    "@backstage/config": "workspace:^"
+    "@backstage/errors": "workspace:^"
+    "@backstage/plugin-auth-backend-module-guest-provider": "workspace:^"
+    "@backstage/plugin-catalog-node": "workspace:^"
+    "@backstage/plugin-kubernetes-backend": "workspace:^"
+    "@backstage/plugin-kubernetes-common": "workspace:^"
+    "@backstage/plugin-kubernetes-node": "workspace:^"
+    "@backstage/plugin-permission-common": "workspace:^"
+    "@backstage/types": "workspace:^"
+    "@google-cloud/container": ^5.17.0
+    "@types/express": "*"
+    "@types/supertest": ^2.0.8
+    express: ^4.17.1
+    express-promise-router: ^4.1.0
+    http-proxy-middleware: ^2.0.0
+    js-yaml: ^4.1.0
+    luxon: ^3.5.0
+    msw: ^2.0.8
+    node-fetch: ^2.6.7
+    supertest: ^6.2.4
+    winston: ^3.14.2
+  languageName: unknown
+  linkType: soft
+
+"@yolossn/plugin-headlamp-frontend@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@yolossn/plugin-headlamp-frontend@npm:0.0.0"
+  dependencies:
+    "@backstage/core-components": "workspace:^"
+    "@backstage/core-plugin-api": "workspace:^"
+    "@backstage/plugin-kubernetes": "workspace:^"
+    "@backstage/plugin-kubernetes-common": "workspace:^"
+    "@backstage/theme": "workspace:^"
+    "@material-ui/core": ^4.9.13
+    "@material-ui/icons": ^4.9.1
+    "@material-ui/lab": ^4.0.0-alpha.61
+    react-use: ^17.2.4
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: 4a5103fc1a03460ca61d4a7c8262e3d3bdc8c8c1c3e676a00fc29dc32ded752e9648de81ba0c233c0b964c71a45684960f8bfa61c2d64da97e5a519c22e73b61
+  languageName: node
+  linkType: hard
+
+"@yolossn/plugin-headlamp-frontend@workspace:plugins/headlamp-frontend":
+  version: 0.0.0-use.local
+  resolution: "@yolossn/plugin-headlamp-frontend@workspace:plugins/headlamp-frontend"
+  dependencies:
+    "@backstage/cli": "workspace:^"
+    "@backstage/core-app-api": "workspace:^"
+    "@backstage/core-components": "workspace:^"
+    "@backstage/core-plugin-api": "workspace:^"
+    "@backstage/dev-utils": "workspace:^"
+    "@backstage/plugin-kubernetes": "workspace:^"
+    "@backstage/plugin-kubernetes-common": "workspace:^"
+    "@backstage/test-utils": "workspace:^"
+    "@backstage/theme": "workspace:^"
+    "@material-ui/core": ^4.9.13
+    "@material-ui/icons": ^4.9.1
+    "@material-ui/lab": ^4.0.0-alpha.61
+    "@testing-library/jest-dom": ^6.0.0
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.0.0
+    msw: ^1.0.0
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-use: ^17.2.4
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
+
 "@zkochan/cmd-shim@npm:^5.1.0":
   version: 5.4.1
   resolution: "@zkochan/cmd-shim@npm:5.4.1"
@@ -27120,7 +27166,6 @@ __metadata:
     "@backstage/plugin-catalog-react": "workspace:^"
     "@backstage/plugin-catalog-unprocessed-entities": "workspace:^"
     "@backstage/plugin-devtools": "workspace:^"
-    "@backstage/plugin-headlamp-frontend": ^0.0.0
     "@backstage/plugin-home": "workspace:^"
     "@backstage/plugin-kubernetes": "workspace:^"
     "@backstage/plugin-kubernetes-cluster": "workspace:^"
@@ -27153,6 +27198,7 @@ __metadata:
     "@types/react-dom": "*"
     "@types/zen-observable": ^0.8.0
     "@vitejs/plugin-react": ^4.0.4
+    "@yolossn/plugin-headlamp-frontend": ^0.0.0
     cross-env: ^7.0.0
     history: ^5.0.0
     react: ^18.0.2
@@ -27249,7 +27295,6 @@ __metadata:
     "@backstage/plugin-catalog-backend-module-scaffolder-entity-model": "workspace:^"
     "@backstage/plugin-catalog-backend-module-unprocessed": "workspace:^"
     "@backstage/plugin-devtools-backend": "workspace:^"
-    "@backstage/plugin-headlamp-backend": ^0.0.0
     "@backstage/plugin-kubernetes-backend": "workspace:^"
     "@backstage/plugin-notifications-backend": "workspace:^"
     "@backstage/plugin-permission-backend": "workspace:^"
@@ -27269,6 +27314,7 @@ __metadata:
     "@opentelemetry/auto-instrumentations-node": ^0.43.0
     "@opentelemetry/exporter-prometheus": ^0.50.0
     "@opentelemetry/sdk-node": ^0.50.0
+    "@yolossn/plugin-headlamp-backend": ^0.0.0
   languageName: unknown
   linkType: soft
 
@@ -33362,9 +33408,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"logform@npm:^2.3.2, logform@npm:^2.4.0":
-  version: 2.6.0
-  resolution: "logform@npm:2.6.0"
+"logform@npm:^2.3.2, logform@npm:^2.6.0":
+  version: 2.6.1
+  resolution: "logform@npm:2.6.1"
   dependencies:
     "@colors/colors": 1.6.0
     "@types/triple-beam": ^1.3.2
@@ -33372,7 +33418,7 @@ __metadata:
     ms: ^2.1.1
     safe-stable-stringify: ^2.3.1
     triple-beam: ^1.3.0
-  checksum: b9ea74bb75e55379ad0eb3e4d65ae6e8d02bc45b431c218162878bf663997ab9258a73104c2b30e09dd2db288bb83c8bf8748e46689d75f5e7e34cf69378d6df
+  checksum: 0c6b95fa8350ccc33c7c33d77de2a9920205399706fc1b125151c857b61eb90873f4670d9e0e58e58c165b68a363206ae670d6da8b714527c838da3c84449605
   languageName: node
   linkType: hard
 
@@ -33527,7 +33573,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^3.0.0, luxon@npm:^3.2.1, luxon@npm:^3.4.3, luxon@npm:~3.4.0":
+"luxon@npm:^3.0.0, luxon@npm:^3.2.1, luxon@npm:^3.4.3, luxon@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "luxon@npm:3.5.0"
+  checksum: f290fe5788c8e51e748744f05092160d4be12150dca70f9fadc0d233e53d60ce86acd82e7d909a114730a136a77e56f0d3ebac6141bbb82fd310969a4704825b
+  languageName: node
+  linkType: hard
+
+"luxon@npm:~3.4.0":
   version: 3.4.4
   resolution: "luxon@npm:3.4.4"
   checksum: 36c1f99c4796ee4bfddf7dc94fa87815add43ebc44c8934c924946260a58512f0fd2743a629302885df7f35ccbd2d13f178c15df046d0e3b6eb71db178f1c60c
@@ -45054,22 +45107,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"winston@npm:^3.13.0, winston@npm:^3.2.1":
-  version: 3.13.0
-  resolution: "winston@npm:3.13.0"
+"winston@npm:^3.13.0, winston@npm:^3.14.2, winston@npm:^3.2.1":
+  version: 3.14.2
+  resolution: "winston@npm:3.14.2"
   dependencies:
     "@colors/colors": ^1.6.0
     "@dabh/diagnostics": ^2.0.2
     async: ^3.2.3
     is-stream: ^2.0.0
-    logform: ^2.4.0
+    logform: ^2.6.0
     one-time: ^1.0.0
     readable-stream: ^3.4.0
     safe-stable-stringify: ^2.3.1
     stack-trace: 0.0.x
     triple-beam: ^1.3.0
     winston-transport: ^4.7.0
-  checksum: 66f9fbbadb58e1632701e9c89391f217310c9455462148e163e060dcd25aed21351b0413bdbbf90e5c5fe9bc945fc5de6f53875ac7c7ef3061133a354fc678c0
+  checksum: 9021637d3ab1d1e639d64e7217ed5ae63fb0e5325defdbce439f708e9b4e26c7a31eb4a731106790aa8ac6f80a3a89242de18d1991ab3838f9d84e55101f4607
   languageName: node
   linkType: hard
 

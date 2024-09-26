@@ -18,6 +18,7 @@ import {
   createBackendPlugin,
 } from '@backstage/backend-plugin-api';
 import { createRouter } from './service/router';
+import { spawnHeadlamp } from './headlamp';
 
 /**
  * headlampPlugin backend plugin
@@ -34,6 +35,12 @@ export const headlampPlugin = createBackendPlugin({
         config: coreServices.rootConfig,
       },
       async init({ httpRouter, logger, config }) {
+        spawnHeadlamp(
+          logger,
+          config,
+          config.getString('headlamp-server.binaryPath'),
+        );
+
         httpRouter.use(
           await createRouter({
             logger,

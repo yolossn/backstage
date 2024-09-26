@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: backstage-plugin-headlamp-frontend
-  title: '@backstage/plugin-headlamp-frontend'
+  name: yolossn-plugin-headlamp-frontend
+  title: "@yolossn/plugin-headlamp-frontend"
 spec:
   lifecycle: experimental
   type: backstage-frontend-plugin
