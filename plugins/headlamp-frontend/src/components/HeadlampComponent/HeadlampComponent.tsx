@@ -16,6 +16,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Progress } from '@backstage/core-components';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { configApiRef, useApi } from '@backstage/core-plugin-api';
 
 interface HeadlampMessage {
   action: string;
@@ -23,16 +24,20 @@ interface HeadlampMessage {
 }
 
 export function HeadlampComponent() {
+  const config = useApi(configApiRef);
   const [isLoaded, setIsLoaded] = useState(false);
   const refreshInterval = 5000;
-  const headlampUrl = 'http://localhost:4466';
+
+  const headlampUrl =
+    config.getOptionalString('headlamp.serverUrl') ||
+    `${window.location.protocol}//${window.location.hostname}:4466`;
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const checkHeadlampReady = async () => {
       try {
-        const response = await fetch(`${headlampUrl}/config`);
+        const response = await fetch(`${headlampUrl}`);
         if (response.ok) {
           setIsLoaded(true);
         } else {

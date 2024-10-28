@@ -38,7 +38,7 @@ export const headlampPlugin = createBackendPlugin({
         spawnHeadlamp(
           logger,
           config,
-          config.getString('headlamp-server.binaryPath'),
+          config.getString('headlampBackend.binaryPath'),
         );
 
         httpRouter.use(
