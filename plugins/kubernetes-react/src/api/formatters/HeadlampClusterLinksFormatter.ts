@@ -56,13 +56,52 @@ export class HeadlampClusterLinksFormatter implements ClusterLinksFormatter {
     return baseUrl;
   }
 
+  private readonly NAMESPACED_RESOURCES = new Set([
+    'pod',
+    'deployment',
+    'replicaset',
+    'statefulset',
+    'daemonset',
+    'job',
+    'cronjob',
+    'service',
+    'ingress',
+    'configmap',
+    'secret',
+    'serviceaccount',
+    'role',
+    'rolebinding',
+    'networkpolicy',
+    'horizontalpodautoscaler',
+    'poddisruptionbudget',
+    'persistentvolumeclaim',
+  ]);
+
   private getHeadlampPath(
     kind: string,
-    object: any,
+    object: {
+      metadata?: {
+        name?: string;
+        namespace?: string;
+      };
+    },
     clusterName: string,
   ): string {
     const lowercaseKind = kind.toLocaleLowerCase('en-US');
-    const { name, namespace } = object.metadata ?? {};
+    const { name } = object.metadata ?? {};
+    let { namespace } = object.metadata ?? {};
+
+    if (!name) {
+      throw new Error(`Resource name is required for kind: ${kind}`);
+    }
+
+    // Add namespace validation
+    if (this.NAMESPACED_RESOURCES.has(lowercaseKind) && !namespace) {
+      throw new Error(`Namespace is required for namespaced resource: ${kind}`);
+    }
+    if (!namespace) {
+      namespace = 'default';
+    }
 
     const pathMap: Record<string, string> = {
       namespace: `/c/${clusterName}/namespaces/${name}`,

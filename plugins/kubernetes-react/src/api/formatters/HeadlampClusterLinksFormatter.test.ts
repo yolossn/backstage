@@ -41,7 +41,7 @@ describe('HeadlampClusterLinksFormatter', () => {
 
     const result = await formatter.formatClusterLink(options);
     expect(result.toString()).toBe(
-      'http://localhost:3000/headlamp?to=/c/test-cluster/pods/default/test-pod',
+      'http://localhost:3000/headlamp?to=%2Fc%2Ftest-cluster%2Fpods%2Fdefault%2Ftest-pod',
     );
   });
 
@@ -54,7 +54,7 @@ describe('HeadlampClusterLinksFormatter', () => {
 
     const result = await formatter.formatClusterLink(options);
     expect(result.toString()).toBe(
-      'https:/headlamp.com/?to=/c/default/deployments/default/test-deployment',
+      'https://headlamp.com/?to=%2Fc%2Fdefault%2Fdeployments%2Fdefault%2Ftest-deployment',
     );
   });
 
