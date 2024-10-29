@@ -1,6 +1,6 @@
 {
   "name": "@yolossn/plugin-headlamp-backend",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "backstage": {
     "role": "backend-plugin",
     "pluginId": "headlamp",

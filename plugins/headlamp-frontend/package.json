@@ -1,6 +1,6 @@
 {
   "name": "@yolossn/plugin-headlamp-frontend",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "backstage": {
     "role": "frontend-plugin",
     "pluginId": "headlamp-frontend",

@@ -64,7 +64,7 @@
     "@opentelemetry/auto-instrumentations-node": "^0.43.0",
     "@opentelemetry/exporter-prometheus": "^0.50.0",
     "@opentelemetry/sdk-node": "^0.50.0",
-    "@yolossn/plugin-headlamp-backend": "^0.0.0"
+    "@yolossn/plugin-headlamp-backend": "workspace:^"
   },
   "devDependencies": {
     "@backstage/cli": "workspace:^"
